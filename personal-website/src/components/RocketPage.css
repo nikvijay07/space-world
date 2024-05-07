@@ -1,0 +1,6 @@
+canvas {
+    height: 100vb;
+    width: 100vw;
+    margin: none;
+    background-image: linear-gradient(rgb(1, 0, 6), rgb(6, 0, 41));
+}
