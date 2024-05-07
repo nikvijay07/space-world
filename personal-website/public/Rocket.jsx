@@ -10,7 +10,7 @@ export default function Model(props) {
   const { nodes, materials } = useGLTF('/rocket.gltf')
   return (
     <group {...props} dispose={null} scale={10}>
-      <group position={[-0.018, -0.029, -0.002]} rotation={[-Math.PI / 2, 0, 0]} scale={0.001}>
+      <group position={[0, -3, 0]} rotation={[-Math.PI / 2, 0, 0]} scale={0.001}>
         <mesh geometry={nodes['Box_-_baked'].geometry} material={materials.Milton} position={[47.234, -47.364, 42.333]} rotation={[0.211, 0.124, 0.524]} scale={1.011} />
         <mesh geometry={nodes['Box_-_baked_1'].geometry} material={materials.Milton} position={[42.691, 46.718, 42.333]} rotation={[-0.214, 0.118, 2.644]} scale={1.011} />
         <mesh geometry={nodes['Box_-_baked_2'].geometry} material={materials.Milton} position={[-36.515, -4.258, 42.333]} rotation={[0.003, -0.244, -1.557]} scale={1.011} />
