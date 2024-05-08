@@ -5,6 +5,11 @@ import './Background.css'
 import Stars from './Stars.jsx';
 import { useTexture } from '@react-three/drei';
 import { BackSide } from 'three';
+import Welcome from '../../public/Welcome.jsx';
+import { extend } from '@react-three/fiber'
+import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry'
+
+extend({TextGeometry})
 
 
 const Background = () => {
@@ -14,6 +19,13 @@ const Background = () => {
   const widthSegments = 30;
   const heightSegments = 30;
 
+  const textOptions = {
+    font: 'Arial',
+    size: 10,
+    height: 10,
+  }
+
+  const textGeometry = new TextGeometry('Hold Space to go on a journey', {textOptions});
 
   return (
     <>

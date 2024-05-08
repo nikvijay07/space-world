@@ -2,8 +2,12 @@ import { useEffect, useRef, Suspense } from 'react'
 import './App.css'
 import { Canvas, render } from '@react-three/fiber';
 import Background from './components/Background';
-import { OrbitControls, PerspectiveCamera, PresentationControls } from '@react-three/drei';
-import Rocket from '../public/Rocket'
+import { Html, OrbitControls, PerspectiveCamera, PresentationControls } from '@react-three/drei';
+import Rocket from '../public/Rocket.jsx'
+import Welcome from '../public/Welcome.jsx';
+import NavBar from './components/Navbar.jsx'
+import InstructionText from './components/InstructionText.jsx';
+
 const App = () => {
   const controls = useRef();
 
@@ -12,17 +16,26 @@ const App = () => {
 
 
   return (
-    <Suspense fallback={null}>
-    <Canvas>
-      {/* <PresentationControls snap global zoom={0.1} rotation={[0, -Math.PI / 2, 0]} polar={[0, Math.PI / 4]} azimuth={[-Math.PI / 4, Math.PI / 8]}> */}
-      <PerspectiveCamera makeDefault fov={20} position={[38, -46, 0]} />
-      <OrbitControls ref={controls} />
-      <ambientLight />
-        <Background />
-        <Rocket/>
-      {/* </PresentationControls> */}
-    </Canvas>
-    </Suspense>
+    <>
+    <main className='everything'>
+      <NavBar></NavBar>
+      <Router>
+        <Routes>
+        </Routes>
+      </Router>
+      <Suspense fallback={null}>
+      <Canvas>
+        <PerspectiveCamera makeDefault fov={20} position={[38, -46, 0]} />
+        <OrbitControls ref={controls} />
+        <ambientLight />
+          <Background />
+          <Rocket/>
+          <Welcome />
+          <InstructionText />
+      </Canvas>
+      </Suspense>
+    </main>
+    </>
   );
 };
 
