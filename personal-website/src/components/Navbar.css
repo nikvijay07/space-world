@@ -1,0 +1,25 @@
+#header {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    opacity: 30;
+    background-color: brown;
+}
+
+#link {
+    font-family: monospace;
+    text-decoration: none;
+    color: rgb(214, 214, 214);
+    font-size: 20px;
+
+}
+
+
+#link:active {
+    font-family: monospace;
+    text-decoration: none;
+    color: rgb(139, 65, 65);
+}
+

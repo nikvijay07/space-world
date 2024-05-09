@@ -5,11 +5,12 @@ import Background from './components/Background';
 import { Html, OrbitControls, PerspectiveCamera, PresentationControls } from '@react-three/drei';
 import Rocket from '../public/Rocket.jsx'
 import Welcome from '../public/Welcome.jsx';
-import NavBar from './components/Navbar.jsx'
-import InstructionText from './components/InstructionText.jsx';
+import Navbar from './components/Navbar.jsx'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home.jsx';
 
 const App = () => {
-  const controls = useRef();
+  // const controls = useRef();
 
   // Function to update camera position and orientation to follow the rocket
   // Call updateCamera whenever the rocket position changes;
@@ -18,25 +19,19 @@ const App = () => {
   return (
     <>
     <main className='everything'>
-      <NavBar></NavBar>
-      <Router>
+    <Router>
+      <Navbar />
         <Routes>
+          <Route path='/' Component = {Home} />
+          <Route path='/about-me' element = {'AboutMe'} />
+          <Route path='/projects' element = {'Projects'} />
+          <Route path='/experience' element = {'Experience'} />
         </Routes>
       </Router>
-      <Suspense fallback={null}>
-      <Canvas>
-        <PerspectiveCamera makeDefault fov={20} position={[38, -46, 0]} />
-        <OrbitControls ref={controls} />
-        <ambientLight />
-          <Background />
-          <Rocket/>
-          <Welcome />
-          <InstructionText />
-      </Canvas>
-      </Suspense>
     </main>
     </>
   );
 };
 
 export default App;
+

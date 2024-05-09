@@ -11,7 +11,7 @@ export default function Rocket(props) {
   const animate = () => {
     if (isSpacePressed) {
       // Update rocket position based on stepSize
-      rocketRef.current.position.z += stepSize;
+      rocketRef.current.position.z -= stepSize;
     }
     // Schedule the next animation frame
     requestAnimationFrame(animate);
