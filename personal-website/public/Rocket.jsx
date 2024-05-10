@@ -2,12 +2,13 @@ import React, { useRef, useEffect, forwardRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 import * as THREE from 'three';
 import { useFrame } from '@react-three/fiber'
+import { useRocket } from '../src/hooks/useRocket';
 
 
 
 const Rocket = forwardRef((props, ref) => {
   const { nodes, materials } = useGLTF('/rocket.gltf')
-  const { rocketPosition } = props
+  const { rocketPosition } = useRocket();
 
 
   let isSpacePressed = false;
@@ -24,6 +25,8 @@ const Rocket = forwardRef((props, ref) => {
   };
 
   useEffect(() => {
+    console.log(rocketPosition)
+
     const handleKeyDown = (event) => {
       if (event.key === ' ') {
         isSpacePressed = true;
@@ -51,6 +54,12 @@ const Rocket = forwardRef((props, ref) => {
       window.cancelAnimationFrame(animate);
     };
   }, []);
+
+  useEffect(() => {
+    ref.current.position.z = rocketPosition[2];
+  }, [rocketPosition]);
+
+
 
   return (
     <group {...props} position={rocketPosition} dispose={null} scale={10} ref={ref}>

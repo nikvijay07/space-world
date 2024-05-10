@@ -9,7 +9,7 @@ import * as THREE from 'three';
 
 
 
-const MainComponents = () => {
+const MainComponents = (props) => {
     const rocketRef = createRef();
     const cameraRef = useRef();
 
@@ -18,23 +18,14 @@ const MainComponents = () => {
     let cameraVector = new THREE.Vector3(0, 0, -20);
   
     useFrame((state) => {
-        // console.log(rocketRef.current)
+        console.log(rocketRef.current.position)
         const rocketPos = rocketRef.current.position;
         const tempRocketPos = rocketPos.clone().add(lookAtVec)
-        console.log(rocketPos)
         const cameraOffset = new THREE.Vector3(0, 11, 7.5)
         const targetVec = rocketPos.clone().add(cameraOffset);
-
-        console.log(rocketPos);
         cameraVector.lerp(targetVec, 1); 
         state.camera.position.copy(targetVec);
-        // console.log("ADFASDDFSDF")
-
-        // console.log(state.camera.position)
-        // console.log(rocketPos)
-        // console.log("ADFASDDFSDF")
         state.camera.lookAt(tempRocketPos);
-        console.log(state.camera.position)
         state.camera.updateProjectionMatrix();
     });
 
@@ -45,7 +36,7 @@ return (
         <OrbitControls  />
         <ambientLight />
         <Background />
-        <Rocket rocketPosition={[0, 0, 35]} ref={rocketRef}/>
+        <Rocket ref={rocketRef}/>
         <Welcome />
     </>
     )

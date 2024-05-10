@@ -7,26 +7,11 @@ import Rocket from '../../public/Rocket.jsx'
 import Welcome from '../../public/Welcome.jsx';
 import * as THREE from 'three';
 import MainComponents from '../components/MainComponents.jsx';
+import { RocketProvider } from '../hooks/useRocket.jsx';
 
 
 
 const Home = () => {
-    const rocketRef = useRef();
-    const cameraRef = useRef();
-
-
-    const lookAtVec = new THREE.Vector3(0, 0, 0);
-    const cameraVector = new THREE.Vector3(0, 0, 0);
-  
-    // useFrame((state) => {
-    //   const rocketPos = rocketRef.current.translation();
-    //   console.log(rocketPos);
-    //   lookAtVec.set(rocketPos.x, rocketPos.y, rocketPos.z);
-    //   cameraVector.lerp(lookAtVec, 0.1);
-    //   state.camera.lookAt(cameraVector);
-    //   state.camera.updateProjectionMatrix();
-    // });
-
 
 return (
     <section className='start'>

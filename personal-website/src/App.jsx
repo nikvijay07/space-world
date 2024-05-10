@@ -9,6 +9,7 @@ import Navbar from './components/Navbar.jsx'
 import InstructionText from './components/InstructionText.jsx';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home.jsx';
+import { RocketProvider } from './hooks/useRocket.jsx';
 
 const App = () => {
   // const controls = useRef();
@@ -21,6 +22,7 @@ const App = () => {
     <>
     <main className='everything'>
     <Router>
+      <RocketProvider>
       <Navbar />
         <Routes>
           <Route path='/' Component = {Home} />
@@ -28,7 +30,8 @@ const App = () => {
           <Route path='/projects' element = {'Projects'} />
           <Route path='/experience' element = {'Experience'} />
         </Routes>
-      </Router>
+      </RocketProvider>
+    </Router>
     </main>
     </>
   );
