@@ -6,6 +6,7 @@ import { Html, OrbitControls, PerspectiveCamera, PresentationControls } from '@r
 import Rocket from '../public/Rocket.jsx'
 import Welcome from '../public/Welcome.jsx';
 import Navbar from './components/Navbar.jsx'
+import InstructionText from './components/InstructionText.jsx';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home.jsx';
 

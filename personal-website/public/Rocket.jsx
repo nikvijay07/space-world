@@ -1,19 +1,25 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, forwardRef } from 'react'
 import { useGLTF } from '@react-three/drei'
+import * as THREE from 'three';
+import { useFrame } from '@react-three/fiber'
 
-export default function Rocket(props) {
+
+
+const Rocket = forwardRef((props, ref) => {
   const { nodes, materials } = useGLTF('/rocket.gltf')
+  const { rocketPosition } = props
 
-  const rocketRef = useRef();
+
   let isSpacePressed = false;
   let stepSize = 0.1; // Adjust as needed
+
 
   const animate = () => {
     if (isSpacePressed) {
       // Update rocket position based on stepSize
-      rocketRef.current.position.z -= stepSize;
+      ref.current.position.z -= stepSize;
+
     }
-    // Schedule the next animation frame
     requestAnimationFrame(animate);
   };
 
@@ -47,8 +53,8 @@ export default function Rocket(props) {
   }, []);
 
   return (
-    <group {...props} dispose={null} scale={10} ref={rocketRef}>
-      <group position={[0, 0, 3]} rotation={[Math.PI, 0, -Math.PI/2 ]} scale={0.001}>
+    <group {...props} position={rocketPosition} dispose={null} scale={10} ref={ref}>
+      <group  rotation={[Math.PI, 0, -Math.PI/2 ]} scale={0.001}>
           <mesh geometry={nodes['Box_-_baked'].geometry} material={materials.Milton} position={[47.234, -47.364, 42.333]} rotation={[0.211, 0.124, 0.524]} scale={1.011} />
         <mesh geometry={nodes['Box_-_baked_1'].geometry} material={materials.Milton} position={[42.691, 46.718, 42.333]} rotation={[-0.214, 0.118, 2.644]} scale={1.011} />
         <mesh geometry={nodes['Box_-_baked_2'].geometry} material={materials.Milton} position={[-36.515, -4.258, 42.333]} rotation={[0.003, -0.244, -1.557]} scale={1.011} />
@@ -60,5 +66,7 @@ export default function Rocket(props) {
     </group>
   )
 }
+// useGLTF.preload('/rocket.gltf')
+);
 
-useGLTF.preload('/rocket.gltf')
+export default Rocket
