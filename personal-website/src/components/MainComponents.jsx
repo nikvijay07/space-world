@@ -6,6 +6,7 @@ import { OrbitControls, PerspectiveCamera, PresentationControls } from '@react-t
 import Rocket from '../../public/Rocket.jsx'
 import Welcome from '../../public/Welcome.jsx';
 import * as THREE from 'three';
+import InstructionText from '../../public/InstructionText.jsx';
 
 
 
@@ -37,10 +38,11 @@ return (
         <ambientLight />
         <Background />
         <Rocket ref={rocketRef}/>
-        <Welcome />
     </>
     )
 
 }
 
 export default MainComponents;
+
+//(0, 11, 7.5)

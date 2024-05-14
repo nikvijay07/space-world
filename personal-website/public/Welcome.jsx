@@ -4,7 +4,7 @@ import { useGLTF } from '@react-three/drei'
 export default function Welcome(props) {
   const { nodes, materials } = useGLTF('/welcome.gltf')
   return (
-    <group {...props} dispose={null} scale={20} rotation={[-Math.PI / 8, Math.PI / 7, 0]} position={[-6, 3, 19]}>
+    <group {...props} dispose={null} scale={40} rotation={[-Math.PI / 9 , 0 , 0]} position={[-1, 3, 28]}>
       <group position={[0.161, 0.002, 0.025]} rotation={[-Math.PI / 2, 0, 0]} scale={0.001}>
         <mesh geometry={nodes.Body.geometry} material={materials['Plastic 3']} position={[29.779, -2.186, 42.953]} scale={18.771} />
         <mesh geometry={nodes.Accessories.geometry} material={materials['Metal 3']} position={[28.803, -3.345, 31.804]} scale={18.771} />

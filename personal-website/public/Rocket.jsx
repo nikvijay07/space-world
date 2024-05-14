@@ -25,7 +25,7 @@ const Rocket = forwardRef((props, ref) => {
   };
 
   useEffect(() => {
-    console.log(rocketPosition)
+    // console.log(rocketPosition)
 
     const handleKeyDown = (event) => {
       if (event.key === ' ') {
