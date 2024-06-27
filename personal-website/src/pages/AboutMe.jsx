@@ -7,6 +7,7 @@ import MainComponents from '../components/MainComponents.jsx';
 import { RocketProvider } from '../hooks/useRocket.jsx';
 import InstructionText from '../../public/InstructionText.jsx';
 import Astronaut from '../../public/Astronaut.jsx';
+import AboutMeText from '../../public/AboutMeText.jsx';
 
 
 
@@ -17,8 +18,11 @@ return (
     <section className='About'>
         <Suspense fallback={null}>
             <Canvas>
-                <MainComponents/>
+                <MainComponents />
+                <Welcome />
+                <InstructionText />
                 <Astronaut />
+                <AboutMeText />
             </Canvas>
         </Suspense>
     </section>

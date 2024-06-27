@@ -8,6 +8,7 @@ import Welcome from '../../public/Welcome.jsx';
 import * as THREE from 'three';
 import InstructionText from '../../public/InstructionText.jsx';
 import TWEEN from '@tweenjs/tween.js'
+import AboutMeText from '../../public/AboutMeText.jsx';
 
 
 
@@ -86,7 +87,8 @@ return (
     <>
         <PerspectiveCamera makeDefault position={[0, 0, 0]} ref={cameraRef} />
         {/* <OrbitControls  /> */}
-        <ambientLight />
+        <ambientLight  p/>
+        <directionalLight position={[12, 2, -3]} intensity={1}/>
         <Background />
         <Rocket ref={rocketRef}/>
     </>
