@@ -15,7 +15,7 @@ extend({TextGeometry})
 const Background = () => {
 
   const map = useTexture('sky-texture.jpg')
-  const boxRadius = 40; // Example values for demonstration
+  const boxRadius = 50; // Example values for demonstration
   const widthSegments = 30;
   const heightSegments = 30;
 

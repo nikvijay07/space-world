@@ -11,16 +11,21 @@ const Rocket = forwardRef((props, ref) => {
   const { rocketPosition } = useRocket();
 
 
-  let isSpacePressed = false;
+  let isArrowUp = false;
   let stepSize = 0.1; // Adjust as needed
+  let isArrowDown = false;
 
 
   const animate = () => {
-    if (isSpacePressed) {
+    if (isArrowUp) {
       // Update rocket position based on stepSize
       ref.current.position.z -= stepSize;
-
     }
+    if (isArrowDown) {
+      ref.current.position.z += stepSize
+    }
+
+
     requestAnimationFrame(animate);
   };
 
@@ -28,15 +33,21 @@ const Rocket = forwardRef((props, ref) => {
     // console.log(rocketPosition)
 
     const handleKeyDown = (event) => {
-      if (event.key === ' ') {
-        isSpacePressed = true;
+      if (event.key === 'ArrowUp') {
+        isArrowUp = true;
+      } else if (event.key === 'ArrowDown') {
+        isArrowDown = true;
       }
     };
 
+
     const handleKeyUp = (event) => {
-      if (event.key === ' ') {
-        isSpacePressed = false;
+      if (event.key === 'ArrowUp') {
+        isArrowUp = false;
+      } else if (event.key === 'ArrowDown') {
+        isArrowDown = false;
       }
+
     };
 
     // Add event listeners on mount
@@ -63,7 +74,7 @@ const Rocket = forwardRef((props, ref) => {
 
   return (
     <group {...props} position={rocketPosition} dispose={null} scale={10} ref={ref}>
-      <group  rotation={[Math.PI, 0, -Math.PI/2 ]} scale={0.001}>
+      <group  rotation={[Math.PI, 0, -Math.PI/2.4 ]} scale={0.001}>
           <mesh geometry={nodes['Box_-_baked'].geometry} material={materials.Milton} position={[47.234, -47.364, 42.333]} rotation={[0.211, 0.124, 0.524]} scale={1.011} />
         <mesh geometry={nodes['Box_-_baked_1'].geometry} material={materials.Milton} position={[42.691, 46.718, 42.333]} rotation={[-0.214, 0.118, 2.644]} scale={1.011} />
         <mesh geometry={nodes['Box_-_baked_2'].geometry} material={materials.Milton} position={[-36.515, -4.258, 42.333]} rotation={[0.003, -0.244, -1.557]} scale={1.011} />

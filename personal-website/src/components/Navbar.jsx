@@ -9,10 +9,10 @@ const Navbar = () => {
 
     return (
         <nav id="header">
-            <NavLink onClick={() => setRocketPosition([0, 0, 35])} to="/" className="Start" id="link">
+            <NavLink onClick={() => setRocketPosition([0, 0, 32])} to="/" className="Start" id="link">
                 Home
             </NavLink>
-            <NavLink to="/about-me" className="About" id="link">
+            <NavLink onClick={() => setRocketPosition(0, 0, -20)} to="/about-me" className="About" id="link">
                 About 
             </NavLink>
             <NavLink to="/projects" className="Projects" id="link">

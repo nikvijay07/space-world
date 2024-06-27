@@ -14,10 +14,10 @@ import Astronaut from '../../public/Astronaut.jsx';
 const AboutMe = () => {
 
 return (
-    <section className='start'>
+    <section className='About'>
         <Suspense fallback={null}>
             <Canvas>
-                <MainComponents />
+                <MainComponents/>
                 <Astronaut />
             </Canvas>
         </Suspense>
