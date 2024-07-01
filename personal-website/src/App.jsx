@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home.jsx';
 import { RocketProvider } from './hooks/useRocket.jsx';
 import AboutMe from './pages/AboutMe.jsx';
+import Projects from './pages/Projects.jsx';
 
 const App = () => {
   // const controls = useRef();
@@ -27,7 +28,7 @@ const App = () => {
         <Routes>
           <Route path='/' Component = {Home} />
           <Route path='/about-me' Component = {AboutMe} />
-          <Route path='/projects' element = {'Projects'} />
+          <Route path='/projects' Component = {Projects} />
           <Route path='/experience' element = {'Experience'} />
         </Routes>
       </RocketProvider>

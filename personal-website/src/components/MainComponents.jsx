@@ -18,8 +18,7 @@ const MainComponents = (props) => {
     const cameraRef = useRef();
 
     const [cameraPosition, setCameraPosition] = useState(new THREE.Vector3(22, 6, -15))
-    const [cameraTarget, setCameraTarget] = useState(new THREE.Vector3(0, 0, -20))
-    let cameraVector = new THREE.Vector3(0, 0, 0);
+    const [cameraTarget, setCameraTarget] = useState(new THREE.Vector3(0, -1, -20))
 
     let firstTweenStarted = useRef(false);
     let secondTweenStarted = useRef(false);
@@ -30,13 +29,13 @@ const MainComponents = (props) => {
        
         const rocketPos = rocketRef.current.position;
         TWEEN.update()
-        // console.log(rocketPos)
-        if (rocketPos.z < -9 && rocketPos.z > -25 ) {   
+        console.log(rocketPos)
+        if (rocketPos.z < -9 && rocketPos.z > -17 ) {   
             secondTweenStarted.current = false
             if (!firstTweenStarted.current) {
 
-                const astronautPosition = new THREE.Vector3(-2, 4.5, -16);
-                const astronautCameraPosition = new THREE.Vector3(9, 4.5, -14);
+                const astronautPosition = new THREE.Vector3(-1, 2.5, -11);
+                const astronautCameraPosition = new THREE.Vector3(6, 3.5, -10);
 
                 firstTweenStarted.current = true;
                 new TWEEN.Tween(cameraPosition)
@@ -48,6 +47,28 @@ const MainComponents = (props) => {
     
                 new TWEEN.Tween(cameraTarget)
                 .to(astronautPosition, 2000)
+                .easing(TWEEN.Easing.Quadratic.Out)
+                .onUpdate(() => {
+                    setCameraTarget(cameraTarget)
+                }).start()
+            }      
+        } else if (rocketPos.z < -22 && rocketPos.z > -45 ) {   
+            secondTweenStarted.current = false
+            if (!firstTweenStarted.current) {
+
+                const projectPosition = new THREE.Vector3(-1, 2.5, -30);
+                const projectCameraPosition = new THREE.Vector3(6, 3.5, -30);
+
+                firstTweenStarted.current = true;
+                new TWEEN.Tween(cameraPosition)
+                .to(projectCameraPosition, 1000)
+                .easing(TWEEN.Easing.Quadratic.Out)
+                .onUpdate(() => {
+                    setCameraPosition(cameraPosition)
+                }).start()
+    
+                new TWEEN.Tween(cameraTarget)
+                .to(projectPosition, 2000)
                 .easing(TWEEN.Easing.Quadratic.Out)
                 .onUpdate(() => {
                     setCameraTarget(cameraTarget)
@@ -88,7 +109,7 @@ return (
         <PerspectiveCamera makeDefault position={[0, 0, 0]} ref={cameraRef} />
         {/* <OrbitControls  /> */}
         <ambientLight  p/>
-        <directionalLight position={[12, 2, -3]} intensity={1}/>
+        <directionalLight position={[12, 2, -10]} intensity={0.3}/>
         <Background />
         <Rocket ref={rocketRef}/>
     </>

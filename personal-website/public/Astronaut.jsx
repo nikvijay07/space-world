@@ -11,7 +11,7 @@ export default function Astronaut(props) {
   const { nodes, materials, animations } = useGLTF('Astronaut.gltf')
   const { actions } = useAnimations(animations, group)
   return (
-    <group  position={[-6, 0, -11]} ref={group} {...props} dispose={null}>
+    <group  position={[-6, 0, -6]} ref={group} {...props} dispose={null}>
       <group name="Astronaut">
         <group name="Group" rotation={[-Math.PI / 2, 0, 3 * Math.PI/4]} scale={0.004}>
           <mesh name="Blue_astronaut_5" geometry={nodes.Blue_astronaut_5.geometry} material={materials['blue astronaut 5']} />

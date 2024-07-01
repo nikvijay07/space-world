@@ -10,7 +10,7 @@ export default function AboutMeText(props) {
   const { nodes, materials } = useGLTF('/AboutMe.gltf')
   return (
     <group {...props} dispose={null}>
-      <group position={[-6, 1, -16]} rotation={[-Math.PI / 2, 0, Math.PI / 2]} scale={0.02}>
+      <group position={[-6, 1, -11]} rotation={[-Math.PI / 2, 0, Math.PI / 2]} scale={0.02}>
         <group position={[0, 0, 105.609]}>
           <mesh geometry={nodes['3D_Text_-_Letter'].geometry} material={materials.Afternoon} position={[-103.272, -13.773, 28.466]} scale={0.311} />
           <mesh geometry={nodes['3D_Text_-_Letter_24'].geometry} material={materials.Afternoon} position={[73.434, -13.773, 28.466]} scale={0.311} />
