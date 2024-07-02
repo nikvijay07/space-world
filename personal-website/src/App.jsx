@@ -24,7 +24,7 @@ const App = () => {
     <main className='everything'>
     <Router>
       <RocketProvider>
-      <Navbar />
+        <Navbar />
         <Routes>
           <Route path='/' Component = {Home} />
           <Route path='/about-me' Component = {AboutMe} />

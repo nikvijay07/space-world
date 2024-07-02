@@ -19,13 +19,6 @@ const Background = () => {
   const widthSegments = 30;
   const heightSegments = 30;
 
-  const textOptions = {
-    font: 'Arial',
-    size: 10,
-    height: 10,
-  }
-
-  const textGeometry = new TextGeometry('Hold Space to go on a journey', {textOptions});
 
   return (
     <>

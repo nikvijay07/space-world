@@ -1,5 +1,5 @@
 import { useEffect, useRef, Suspense } from 'react'
-// import './App.css'
+import './Home.css'
 import { Canvas, render, useFrame } from '@react-three/fiber';
 import Background from '../components/Background.jsx';
 import { Html, OrbitControls, PerspectiveCamera, PresentationControls } from '@react-three/drei';

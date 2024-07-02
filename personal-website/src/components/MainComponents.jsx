@@ -2,14 +2,14 @@ import { useEffect, useRef, Suspense, createRef, useState } from 'react'
 // import './App.css'
 import { Canvas, render, useFrame, useThree } from '@react-three/fiber';
 import Background from '../components/Background.jsx';
-import { OrbitControls, PerspectiveCamera, PresentationControls } from '@react-three/drei';
+import { OrbitControls, PerspectiveCamera, Html } from '@react-three/drei';
 import Rocket from '../../public/Rocket.jsx'
 import Welcome from '../../public/Welcome.jsx';
 import * as THREE from 'three';
 import InstructionText from '../../public/InstructionText.jsx';
 import TWEEN from '@tweenjs/tween.js'
 import AboutMeText from '../../public/AboutMeText.jsx';
-
+import Navbar from './Navbar.jsx';
 
 
 
@@ -107,8 +107,7 @@ const MainComponents = (props) => {
 return (
     <>
         <PerspectiveCamera makeDefault position={[0, 0, 0]} ref={cameraRef} />
-        {/* <OrbitControls  /> */}
-        <ambientLight  p/>
+        <ambientLight/>
         <directionalLight position={[12, 2, -10]} intensity={0.3}/>
         <Background />
         <Rocket ref={rocketRef}/>

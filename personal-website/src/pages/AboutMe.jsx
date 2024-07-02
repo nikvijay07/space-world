@@ -12,6 +12,7 @@ import InstructionText from '../../public/InstructionText.jsx';
 import Astronaut from '../../public/Astronaut.jsx';
 import AboutMeText from '../../public/AboutMeText.jsx';
 import ProjectCube from '../components/ProjectCube.jsx';
+import './Home.css'
 
 
 

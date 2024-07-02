@@ -14,11 +14,10 @@ import AboutMeText from '../../public/AboutMeText.jsx';
 import ProjectCube from '../components/ProjectCube.jsx';
 
 
-
 const Projects = () => {
 
 return (
-    <section className='About'>
+    <section className='Projects'>
         <Suspense fallback={null}>
             <Canvas>
                 <MainComponents />
