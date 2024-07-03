@@ -1,15 +1,11 @@
 import { useEffect, useRef, Suspense, createRef, useState } from 'react'
 // import './App.css'
-import { Canvas, render, useFrame, useThree } from '@react-three/fiber';
+import { useFrame } from '@react-three/fiber';
 import Background from '../components/Background.jsx';
-import { OrbitControls, PerspectiveCamera, Html } from '@react-three/drei';
+import { PerspectiveCamera } from '@react-three/drei';
 import Rocket from '../../public/Rocket.jsx'
-import Welcome from '../../public/Welcome.jsx';
 import * as THREE from 'three';
-import InstructionText from '../../public/InstructionText.jsx';
 import TWEEN from '@tweenjs/tween.js'
-import AboutMeText from '../../public/AboutMeText.jsx';
-import Navbar from './Navbar.jsx';
 
 
 
