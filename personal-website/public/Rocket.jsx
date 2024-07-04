@@ -12,7 +12,7 @@ const Rocket = forwardRef((props, ref) => {
 
 
   let isArrowUp = false;
-  let stepSize = 0.1; // Adjust as needed
+  let stepSize = 0.2; // Adjust as needed
   let isArrowDown = false;
 
 

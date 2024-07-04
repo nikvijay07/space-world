@@ -17,7 +17,7 @@ import ProjectCube from '../components/ProjectCube.jsx';
 const Projects = () => {
 
 return (
-    <section className='Projects'>
+    <section className='start'>
         <Suspense fallback={null}>
             <Canvas>
                 <MainComponents />

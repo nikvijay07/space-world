@@ -13,7 +13,7 @@ import './Home.css'
 const AboutMe = () => {
 
 return (
-    <section className='About'>
+    <section className='start'>
         <Suspense fallback={null}>
             <Canvas>
                 <MainComponents />

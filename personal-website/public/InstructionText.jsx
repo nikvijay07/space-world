@@ -9,8 +9,8 @@ import { useGLTF } from '@react-three/drei'
 export function InstructionText(props) {
   const { nodes, materials } = useGLTF('/InstructionText.gltf')
   return (
-    <group {...props} dispose={null} position={[-7, -2, 25 ]}>
-      <group rotation={[-Math.PI/2 , 0, Math.PI/2.7]} scale={0.04}>
+    <group {...props} dispose={null} position={[-4, -2, 38 ]}>
+      <group rotation={[-Math.PI/2 , 0, Math.PI/3.2]} scale={0.04}>
         <mesh geometry={nodes['3D_Text_-_H'].geometry} material={materials.Melody} position={[-132.59, 0, 79.231]} scale={0.302} />
         <mesh geometry={nodes['3D_Text_-_o'].geometry} material={materials.Melody} position={[-120.5, 0, 79.231]} scale={0.302} />
         <mesh geometry={nodes['3D_Text_-_o_1'].geometry} material={materials.Melody} position={[-33.828, 0, 79.231]} scale={0.302} />
