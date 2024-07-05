@@ -6,6 +6,7 @@ import { PerspectiveCamera } from '@react-three/drei';
 import Rocket from '../../public/Rocket.jsx'
 import * as THREE from 'three';
 import TWEEN from '@tweenjs/tween.js'
+import Button from '../../public/Button.jsx';
 
 
 
@@ -19,12 +20,14 @@ const MainComponents = (props) => {
     let firstTweenStarted = useRef(false);
     let secondTweenStarted = useRef(false);
 
-
   
     useFrame((state) => {
        
         const rocketPos = rocketRef.current.position;
         TWEEN.update()
+
+
+
         if (rocketPos.z < 14 && rocketPos.z > 4 ) {   
             secondTweenStarted.current = false
             if (!firstTweenStarted.current) {
@@ -105,6 +108,7 @@ return (
         <directionalLight position={[12, 2, -10]} intensity={0.3}/>
         <Background />
         <Rocket ref={rocketRef}/>
+        <Button />
     </>
     )
 
