@@ -13,7 +13,10 @@
     text-decoration: none;
     color: rgb(214, 214, 214);
     font-size: 20px;
+}
 
+#link:hover {
+    color: rgb(179, 116, 160);
 }
 
 #link:active {
