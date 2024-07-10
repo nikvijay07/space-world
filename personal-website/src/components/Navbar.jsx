@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom"
 import './Navbar.css'
 import { useRocket } from "../hooks/useRocket"
+import STARTING_Z from "../../public/constants";
 
 const Navbar = () => {
 
@@ -9,7 +10,7 @@ const Navbar = () => {
 
     return (
         <nav id="header">
-            <NavLink onClick={() => setRocketPosition([0, 0, 45])} to="/" className="Start" id="link">
+            <NavLink onClick={() => setRocketPosition([0, 0, STARTING_Z + 7])} to="/" className="Start" id="link">
                 Home
             </NavLink>
             <NavLink onClick={() => setRocketPosition([0, 0, 8])} to="/about-me" className="About" id="link">

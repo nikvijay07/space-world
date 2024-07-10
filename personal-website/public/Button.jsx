@@ -2,6 +2,7 @@ import React, { useCallback, useRef, useState } from 'react'
 import { useGLTF } from '@react-three/drei'
 import TWEEN from '@tweenjs/tween.js'
 import { useFrame } from '@react-three/fiber'
+import STARTING_Z from './constants'
 
 export default function Button(props) {
   const { nodes, materials } = useGLTF('/Button.gltf')
@@ -9,6 +10,9 @@ export default function Button(props) {
   const [buttonScale, setButtonScale] = useState([1, 1, 1.9])
   const newButtonScale = [1, 1, 1.2]
   const oldButtonScale = [1, 1, 1.9]
+
+  const resumePosition = STARTING_Z - 35;
+
   const buttonDown = new TWEEN.Tween(buttonScale)
       .to(newButtonScale, 500)
       .easing(TWEEN.Easing.Sinusoidal.Out)
@@ -50,7 +54,7 @@ export default function Button(props) {
   }
 
   return (
-    <group {...props} dispose={null} position={[-5, 3, 2]} rotation={[-Math.PI / 2, 0, Math.PI / 0.8]}>
+    <group {...props} dispose={null} position={[-5, 3, resumePosition]} rotation={[-Math.PI / 2, 0, Math.PI / 0.8]}>
       <group onPointerEnter={onHover} onClick={onButtonClick} rotation={[Math.PI / 2, -Math.PI, 0]} scale={[0.02, 0.02, 0.02]}>
         <group scale={buttonScale}>
           <mesh geometry={nodes.Cylinder_1.geometry} material={materials['Cosmopolitan 1']} />

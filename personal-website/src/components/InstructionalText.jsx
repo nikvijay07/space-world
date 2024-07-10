@@ -4,6 +4,7 @@ import { useTexture, Text } from '@react-three/drei';
 import SpaceFont from "../../public/AntonSC-Regular.ttf"
 import computerFont from "../../public/Monospace.ttf"
 import {  useEffect, useState } from 'react'
+import STARTING_Z from '../../public/constants';
 
 
 
@@ -14,7 +15,7 @@ const InstructionalText = () => {
 
     const textPositionX = -5
     const textPositionY = 1
-    const textPositionZ = 39
+    const textPositionZ = STARTING_Z
 
     return (
         <>

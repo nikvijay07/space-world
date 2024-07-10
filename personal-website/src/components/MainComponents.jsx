@@ -14,7 +14,7 @@ const MainComponents = (props) => {
     const rocketRef = createRef();
     const cameraRef = useRef();
 
-    const [cameraPosition, setCameraPosition] = useState(new THREE.Vector3(22, 8, -15))
+    const [cameraPosition, setCameraPosition] = useState(new THREE.Vector3(20, 8, -15))
     const [cameraTarget, setCameraTarget] = useState(new THREE.Vector3(0, -1, -20))
 
     let firstTweenStarted = useRef(false);
@@ -72,7 +72,7 @@ const MainComponents = (props) => {
         } else {
             firstTweenStarted.current = false;
             if (!secondTweenStarted.current) {
-                const originalCameraPosition = new THREE.Vector3(rocketPos.x + 10, rocketPos.y + 6, rocketPos.z + 2)
+                const originalCameraPosition = new THREE.Vector3(rocketPos.x + 30, rocketPos.y + 6, rocketPos.z + 2)
                 const originalCameraTarget = new THREE.Vector3(rocketPos.x - 5, rocketPos.y + 1, rocketPos.z - 5 )
     
                 new TWEEN.Tween(cameraPosition)

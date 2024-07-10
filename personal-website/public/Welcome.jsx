@@ -1,15 +1,33 @@
-import React, { useRef } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { useGLTF } from '@react-three/drei'
+import STARTING_Z from "../public/constants.js"
+import { useSpring, animated } from '@react-spring/three'
 
 export default function Welcome(props) {
   const { nodes, materials } = useGLTF('/welcome.gltf')
+  
+  const [spring, api] = useSpring(() => ({ rotation: [0, 0, 0], config: { friction: 40 } }), []);
+
+  useEffect(() => {
+        let timeout;
+        const wander = () => {
+            api.start({ rotation: [0, 0, -1 + (Math.random() * 2)] });
+            timeout = setTimeout(wander, (1 + Math.random() * 3) * 1000);
+        };
+        wander();
+        return () => clearTimeout(timeout);
+    }, [])
+  
+
   return (
-    <group {...props} dispose={null} scale={40} rotation={[0 , Math.PI/3.2 , 0]} position={[-6, 3, 39]}>
-      <group position={[0.161, 0.002, 0.025]} rotation={[-Math.PI / 2, 0, 0]} scale={0.001}>
-        <mesh geometry={nodes.Body.geometry} material={materials['Plastic 3']} position={[29.779, -2.186, 42.953]} scale={18.771} />
-        <mesh geometry={nodes.Accessories.geometry} material={materials['Metal 3']} position={[28.803, -3.345, 31.804]} scale={18.771} />
-        <mesh geometry={nodes.Lights.geometry} material={materials['Glass 3']} position={[26.493, -10.59, 51.891]} scale={18.771} />
-        <mesh geometry={nodes.Hands_and_Legs.geometry} material={materials['Metal 3']} position={[28.571, -6.885, 3.44]} scale={18.771} />
+    <group {...props} dispose={null} scale={40} rotation={[0 , Math.PI/3.2 , 0]} position={[-6, 3, STARTING_Z]}>
+      <group position={[0.161, 0.002, 0.025]} rotation={[-Math.PI / 2, 0, 0]} scale={0.001} >
+        <animated.mesh {...spring}>
+          <mesh geometry={nodes.Body.geometry} material={materials['Plastic 3']} position={[29.779, -2.186, 42.953]} scale={18.771} />
+          <mesh geometry={nodes.Accessories.geometry} material={materials['Metal 3']} position={[28.803, -3.345, 31.804]} scale={18.771} />
+          <mesh geometry={nodes.Lights.geometry} material={materials['Glass 3']} position={[26.493, -10.59, 51.891]} scale={18.771} />
+          <mesh geometry={nodes.Hands_and_Legs.geometry} material={materials['Metal 3']} position={[28.571, -6.885, 3.44]} scale={18.771} />
+        </animated.mesh>
       </group>
       <group rotation={[-Math.PI / 2, 0, 0]} scale={0.001}>
         <mesh geometry={nodes['3D_Text_-_m'].geometry} material={materials.Ballon} position={[-156.55, 0, 0]} />

@@ -4,6 +4,7 @@ import { useTexture, Text } from '@react-three/drei';
 import SpaceFont from "../../public/AntonSC-Regular.ttf"
 import computerFont from "../../public/Monospace.ttf"
 import {  useEffect, useState } from 'react'
+import STARTING_Z from '../../public/constants';
 
 
 
@@ -17,7 +18,7 @@ const ProjectCube = () => {
 
     const cubePositionX = -13
     const cubePositionY = 0
-    const cubePositionZ = -20
+    const cubePositionZ = STARTING_Z - 57
 
 
 

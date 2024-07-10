@@ -12,7 +12,7 @@ const Stars = (props) =>  {
 
     const geometry = new THREE.BufferGeometry();
     const vertices = [];
-    const numPoints = 1000; // Adjust for desired number of stars
+    const numPoints = 1100; // Adjust for desired number of stars
 
     for (let i = 0; i < numPoints; i++) {
         let accepted = false;
@@ -23,7 +23,7 @@ const Stars = (props) =>  {
 
         const distanceSquared = x * x + y * y + z * z; // squared distance from origin
 
-        if (distanceSquared <= 1) { // Check if point is within sphere
+        if (distanceSquared <= 1.4) { // Check if point is within sphere
             vertices.push(x * boxRadius, y * boxRadius, z * boxRadius); // Scale by radius (10) and add to vertices
             accepted = true;
         }
