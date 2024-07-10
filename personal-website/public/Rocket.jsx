@@ -17,11 +17,11 @@ const Rocket = forwardRef((props, ref) => {
 
 
   const animate = () => {
-    if (isArrowUp) {
+    if (isArrowUp && ref.current.position.z > -50) {
       // Update rocket position based on stepSize
       ref.current.position.z -= stepSize;
     }
-    if (isArrowDown) {
+    if (isArrowDown && ref.current.position.z < 55) {
       ref.current.position.z += stepSize
     }
 

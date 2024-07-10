@@ -15,7 +15,7 @@ const ProjectCube = () => {
     const cube3 = useGLTF("GreenCube.glb")
 
 
-    const cubePositionX = -15
+    const cubePositionX = -13
     const cubePositionY = 0
     const cubePositionZ = -20
 

@@ -13,6 +13,7 @@ import Astronaut from '../../public/Astronaut.jsx';
 import AboutMeText from '../../public/AboutMeText.jsx';
 import ProjectCube from '../components/ProjectCube.jsx';
 import Button from '../../public/Button.jsx';
+import InstructionalText from '../components/InstructionalText.jsx';
 
 
 
@@ -25,7 +26,7 @@ return (
             <Canvas>
                 <MainComponents />
                 <Welcome />
-                <InstructionText />
+                <InstructionalText />
                 <Astronaut />
                 <AboutMeText />
                 <Button />

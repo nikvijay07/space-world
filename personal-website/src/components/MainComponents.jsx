@@ -26,8 +26,6 @@ const MainComponents = (props) => {
         const rocketPos = rocketRef.current.position;
         TWEEN.update()
 
-
-
         if (rocketPos.z < 14 && rocketPos.z > 4 ) {   
             secondTweenStarted.current = false
             if (!firstTweenStarted.current) {
@@ -91,8 +89,6 @@ const MainComponents = (props) => {
                     setCameraTarget(cameraTarget)
                 }).start()
             }
-
-
 
         }
         state.camera.lookAt(cameraTarget)

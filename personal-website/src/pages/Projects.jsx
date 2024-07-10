@@ -8,11 +8,12 @@ import Welcome from '../../public/Welcome.jsx';
 import * as THREE from 'three';
 import MainComponents from '../components/MainComponents.jsx';
 import { RocketProvider } from '../hooks/useRocket.jsx';
-import InstructionText from '../../public/InstructionText.jsx';
 import Astronaut from '../../public/Astronaut.jsx';
 import AboutMeText from '../../public/AboutMeText.jsx';
 import ProjectCube from '../components/ProjectCube.jsx';
 import Button from '../../public/Button.jsx';
+import InstructionalText from '../components/InstructionalText.jsx';
+
 
 const Projects = () => {
 
@@ -22,7 +23,7 @@ return (
             <Canvas>
                 <MainComponents />
                 <Welcome />
-                <InstructionText />
+                <InstructionalText />
                 <Astronaut />
                 <AboutMeText />
                 <Button />
