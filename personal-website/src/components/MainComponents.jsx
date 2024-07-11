@@ -31,7 +31,7 @@ const MainComponents = (props) => {
             if (!firstTweenStarted.current) {
 
                 const astronautPosition = new THREE.Vector3(-1, 2.5, 25);
-                const astronautCameraPosition = new THREE.Vector3(11, 3.5, 25);
+                const astronautCameraPosition = new THREE.Vector3(8, 3.5, 25);
 
                 firstTweenStarted.current = true;
                 new TWEEN.Tween(cameraPosition)

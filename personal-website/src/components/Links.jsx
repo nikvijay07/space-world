@@ -20,6 +20,10 @@ const Links = () => {
     const [spring, api] = useSpring(() => ({ position: [0, 0, 0], config: { friction: 40 } }), []);
     const [spring2, api2] = useSpring(() => ({ position: [0, 0, 0], config: { friction: 40 } }), []);
 
+    const linksX = -13;
+    const linksY = 4;
+    const linksZ = -41
+    
     const shake = (hovered) => {
         api.start({
         position: [
@@ -58,10 +62,10 @@ const Links = () => {
         <group>
             <animated.mesh onClick={(e) => {transport(e, "https://github.com/nikvijay07")}} onPointerLeave={() => { setGithubHovered(false); shake(githubHovered);}} onPointerEnter={() => {setGithubHovered(true); shake(githubHovered);}} {...spring}>
             {/* {githubRef.current && <Decal ref={githubRef} scale={[2, 2, 2]} position = {[-13, 9, -41]} texture={gitHubMap} /> } */}
-                <RoundedBox args={[1, 2.5, 6]} radius={0.4} smoothness={9} position={[-13, 6, -41]}>
+                <RoundedBox args={[1, 2.5, 6]} radius={0.4} smoothness={9} position={[linksX, linksY, linksZ]}>
                     <meshPhysicalMaterial color={"#6727bd"} />
                 </RoundedBox>
-                <mesh position={[-12, 6, -40.5]} rotation={[0, Math.PI/2, 0]}>
+                <mesh position={[linksX + 1, linksY, linksZ + 0.5]} rotation={[0, Math.PI/2, 0]}>
                 {/* <RoundedBox args={[2, 2, 8]} radius={0.4} smoothness={9} position={[-13, 0, -41]}>
                     <MeshReflectorMaterial color={"#ae4a4d"} />
                 </RoundedBox> */}
@@ -70,10 +74,10 @@ const Links = () => {
                 </mesh>
             </animated.mesh>
             <animated.mesh onClick={(e) => {transport(e, "https://linkedin.com/in/nikhil-vijayvergiya1")}} onPointerLeave={() => { setLinkedinHovered(false); shake2(linkedinHovered);}} onPointerEnter={() => {setLinkedinHovered(true); shake2(linkedinHovered);}} {...spring2}>
-                <RoundedBox rotation={[0, 0, 0]}args={[1, 2.5, 6]} radius={0.4} smoothness={2} position={[-13, 3, -41]}>
+                <RoundedBox rotation={[0, 0, 0]}args={[1, 2.5, 6]} radius={0.4} smoothness={2} position={[linksX, linksY - 3, linksZ]}>
                     <meshPhysicalMaterial color={"#CCCCCC"} />
                 </RoundedBox>
-                <mesh position={[-12.4, 3, -41]} rotation={[0, Math.PI/2, 0]}>
+                <mesh position={[linksX + 0.6, linksY - 3, linksZ]} rotation={[0, Math.PI/2, 0]}>
                 {/* <RoundedBox args={[2, 2, 8]} radius={0.4} smoothness={9} position={[-13, 0, -41]}>
                     <MeshReflectorMaterial color={"#ae4a4d"} />
                 </RoundedBox> */}
