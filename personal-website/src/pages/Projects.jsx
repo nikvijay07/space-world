@@ -13,7 +13,7 @@ import AboutMeText from '../../public/AboutMeText.jsx';
 import ProjectCube from '../components/ProjectCube.jsx';
 import Button from '../../public/Button.jsx';
 import InstructionalText from '../components/InstructionalText.jsx';
-
+import Links from '../components/Links.jsx';
 
 const Projects = () => {
 
@@ -28,6 +28,7 @@ return (
                 <AboutMeText />
                 <Button />
                 <ProjectCube />
+                <Links />
             </Canvas>
         </Suspense>
     </section>

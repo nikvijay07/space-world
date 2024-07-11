@@ -34,16 +34,17 @@ const Stars = (props) =>  {
 
     const starSprite = new THREE.TextureLoader().load('./star.png');
     const starMtl = new THREE.PointsMaterial({
-        color: 0xffffff,
-        size: 0.2,
-        map: starSprite
+        opacity: 0.2,
+        size: 1,
+        map: starSprite,
+        alphaTest: 0.05
     }
     );
 
 
     return (
         <>
-        <OrbitControls></OrbitControls>
+        {/* <OrbitControls></OrbitControls> */}
         <points ref={ref} geometry={geometry} material={starMtl}></points>
         </>
     )

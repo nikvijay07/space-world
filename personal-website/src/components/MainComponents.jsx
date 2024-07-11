@@ -25,14 +25,13 @@ const MainComponents = (props) => {
        
         const rocketPos = rocketRef.current.position;
         TWEEN.update()
-        console.log(rocketPos)
 
         if (rocketPos.z < 30.6 && rocketPos.z > 20.6 ) {   
             secondTweenStarted.current = false
             if (!firstTweenStarted.current) {
 
                 const astronautPosition = new THREE.Vector3(-1, 2.5, 25);
-                const astronautCameraPosition = new THREE.Vector3(6, 3.5, 25);
+                const astronautCameraPosition = new THREE.Vector3(11, 3.5, 25);
 
                 firstTweenStarted.current = true;
                 new TWEEN.Tween(cameraPosition)
@@ -73,7 +72,7 @@ const MainComponents = (props) => {
         } else {
             firstTweenStarted.current = false;
             if (!secondTweenStarted.current) {
-                const originalCameraPosition = new THREE.Vector3(rocketPos.x + 30, rocketPos.y + 6, rocketPos.z + 2)
+                const originalCameraPosition = new THREE.Vector3(rocketPos.x + 10, rocketPos.y + 6, rocketPos.z + 2)
                 const originalCameraTarget = new THREE.Vector3(rocketPos.x - 5, rocketPos.y + 1, rocketPos.z - 5 )
     
                 new TWEEN.Tween(cameraPosition)

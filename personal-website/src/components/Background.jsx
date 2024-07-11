@@ -7,9 +7,7 @@ import { useTexture } from '@react-three/drei';
 import { BackSide } from 'three';
 import Welcome from '../../public/Welcome.jsx';
 import { extend } from '@react-three/fiber'
-import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry'
 
-extend({TextGeometry})
 
 
 const Background = () => {

@@ -13,10 +13,10 @@ const Navbar = () => {
             <NavLink onClick={() => setRocketPosition([0, 0, STARTING_Z + 7])} to="/" className="Start" id="link">
                 Home
             </NavLink>
-            <NavLink onClick={() => setRocketPosition([0, 0, 8])} to="/about-me" className="About" id="link">
+            <NavLink onClick={() => setRocketPosition([0, 0, STARTING_Z - 26])} to="/about-me" className="About" id="link">
                 About 
             </NavLink>
-            <NavLink onClick={() => setRocketPosition([0, 0, -17])} to="/projects" className="Projects" id="link">
+            <NavLink onClick={() => setRocketPosition([0, 0, STARTING_Z - 55])} to="/projects" className="Projects" id="link">
                 Projects 
             </NavLink>
             {/* <NavLink to="/experience" className="Experience" id="link">

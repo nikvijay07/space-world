@@ -8,7 +8,7 @@ import ProjectCube from '../components/ProjectCube.jsx';
 import './Home.css'
 import Button from '../../public/Button.jsx';
 import InstructionalText from '../components/InstructionalText.jsx';
-
+import Links from '../components/Links.jsx';
 
 
 
@@ -25,6 +25,7 @@ return (
                 <AboutMeText />
                 <Button />
                 <ProjectCube />
+                <Links />
             </Canvas>
         </Suspense>
     </section>
