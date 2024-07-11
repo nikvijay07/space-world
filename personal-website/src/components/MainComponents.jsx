@@ -48,7 +48,7 @@ const MainComponents = (props) => {
                     setCameraTarget(cameraTarget)
                 }).start()
             }      
-        } else if (rocketPos.z < 2 && rocketPos.z > -23 ) {   
+        } else if (rocketPos.z < 2 && rocketPos.z > -35 ) {   
             secondTweenStarted.current = false
             if (!firstTweenStarted.current) {
 

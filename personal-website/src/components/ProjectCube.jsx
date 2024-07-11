@@ -14,6 +14,7 @@ const ProjectCube = () => {
     const cube = useGLTF("projectCube.glb")
     const cube2 = useGLTF("projectCube2.glb")
     const cube3 = useGLTF("GreenCube.glb")
+    const purpleCube = useGLTF("purpleCube.glb")
 
 
     const cubePositionX = -13
@@ -25,6 +26,8 @@ const ProjectCube = () => {
     const [hovered, setHovered] = useState(false);
     const [hovered2, setHovered2] = useState(false);
     const [hovered3, setHovered3] = useState(false);
+    const [hovered4, setHovered4] = useState(false);
+
 
 
 
@@ -69,9 +72,21 @@ const ProjectCube = () => {
                 Dungeon Explorer
                 <meshStandardMaterial color={hovered3 ? "#232F4F" : "#FFFFFF" }  />
             </Text>
-            <Text position = {[cubePositionX + 2.68, cubePositionY + 2.5 ,cubePositionZ - 17.95]} rotation = {[0, Math.PI/2, -0.01]} scale={[0.3, 0.3, 0.3]} maxWidth={15} textAlign='center' lineHeight={1.3} font={bodyText}> 
+            <Text position = {[cubePositionX + 2.68, cubePositionY + 2.6 ,cubePositionZ - 17.95]} rotation = {[0, Math.PI/2, -0.01]} scale={[0.3, 0.3, 0.3]} maxWidth={15} textAlign='center' lineHeight={1.3} font={bodyText}> 
             Created a 2D game with enemies, leaderboard tracking, collision detection, and shooting animations in a team environment. Used Java, Kotlin, and Android Studio
                 <meshStandardMaterial color={hovered3 ? "#232F4F" : "#FFFFFF" } />
+            </Text>
+            </mesh>
+
+            <mesh onPointerEnter={() => setHovered4(true)} onPointerLeave={() => setHovered4(false)} >
+            <primitive object={purpleCube.scene} rotation = {[0, Math.PI/2, 0]} position = {[cubePositionX, cubePositionY + 0.8 ,cubePositionZ - 27.3]} scale = {[65, 65, 55]} />
+            <Text position = {[cubePositionX + 2.68, cubePositionY + 5.55 , cubePositionZ - 27.2]} rotation = {[0, Math.PI/2, -0.01]} lineHeight={1.2}  maxWidth = {6} scale={[0.6, 0.6, 0.6]} font={SpaceFont} textAlign='center'> 
+                AirBnB Review Summarizer
+                <meshStandardMaterial color={hovered4 ? "#232F4F" : "#FFFFFF" }  />
+            </Text>
+            <Text position = {[cubePositionX + 2.68, cubePositionY + 3.55 , cubePositionZ - 27.15]} rotation = {[0, Math.PI/2, -0.01]} scale={[0.3, 0.3, 0.3]} maxWidth={16} lineHeight={1.3} font={bodyText} textAlign='center'> 
+                Developed a chrome extension that scraped reviews from an AirBnB property and compiled a summary to showcase both positive and negative aspects in a concise blurb. Created with ...
+                <meshStandardMaterial color={hovered4 ? "#232F4F" : "#FFFFFF" } />
             </Text>
             </mesh>
         </group>
