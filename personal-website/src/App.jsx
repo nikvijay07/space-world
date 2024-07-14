@@ -13,29 +13,6 @@ import AboutMe from './pages/AboutMe.jsx';
 import Projects from './pages/Projects.jsx';
 
 const App = () => {
-  // const controls = useRef();
-
-
-
-  // function onWindowResize() {
-  //   const width = window.innerWidth;
-  //   const height = window.innerHeight;
-
-
-
-  //   camera.aspect = width / height;
-  //   camera.updateProjectionMatrix();
-
-  //   // Update renderer size
-  //   renderer.setSize(width, height);
-
-  //   // Optionally, you can render the scene immediately
-  //   renderer.render(scene, camera);
-  // }
-
-  // // Function to update camera position and orientation to follow the rocket
-  // // Call updateCamera whenever the rocket position changes;
-  // document.addEventListener('resize', onWindowResize, false)
 
   return (
     <>
