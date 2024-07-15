@@ -15,7 +15,7 @@ import ProjectCube from '../components/ProjectCube.jsx';
 import Button from '../../public/Button.jsx';
 import InstructionalText from '../components/InstructionalText.jsx';
 import Links from '../components/Links.jsx';
-
+import Screen from '../components/Screen.jsx';
 
 
 
@@ -29,7 +29,8 @@ return (
                 <Welcome />
                 <InstructionalText />
                 <Astronaut />
-                <AboutMeText />
+                <AboutMeText/>
+                <Screen />
                 <Button />
                 <ProjectCube />
                 <Links />
