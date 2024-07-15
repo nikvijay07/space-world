@@ -11,6 +11,7 @@ import Home from './pages/Home.jsx';
 import { RocketProvider } from './hooks/useRocket.jsx';
 import AboutMe from './pages/AboutMe.jsx';
 import Projects from './pages/Projects.jsx';
+import ContactLinks from './pages/ContactLinks.jsx';
 
 const App = () => {
 
@@ -24,7 +25,7 @@ const App = () => {
           <Route path='/' Component = {Home} />
           <Route path='/about-me' Component = {AboutMe} />
           <Route path='/projects' Component = {Projects} />
-          <Route path='/experience' element = {'Experience'} />
+          <Route path='/links' Component = {ContactLinks} />
         </Routes>
       </RocketProvider>
     </Router>

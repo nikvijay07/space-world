@@ -11,7 +11,7 @@ export default function Button(props) {
   const newButtonScale = [1, 1, 1.2]
   const oldButtonScale = [1, 1, 1.9]
 
-  const resumePosition = STARTING_Z - 35;
+  const resumePosition = STARTING_Z - 36;
 
   const buttonDown = new TWEEN.Tween(buttonScale)
       .to(newButtonScale, 500)
@@ -54,8 +54,8 @@ export default function Button(props) {
   }
 
   return (
-    <group {...props} dispose={null} position={[-5, 3, resumePosition]} rotation={[-Math.PI / 2, 0, Math.PI / 0.8]}>
-      <group onPointerEnter={onHover} onClick={onButtonClick} rotation={[Math.PI / 2, -Math.PI, 0]} scale={[0.02, 0.02, 0.02]}>
+    <group {...props} dispose={null} position={[-6, 1.5, resumePosition]} rotation={[-Math.PI / 2, 0, Math.PI / 0.8]}>
+      <group onPointerEnter={onHover} onClick={onButtonClick} rotation={[Math.PI*6/11, -Math.PI, 0]} scale={[0.02, 0.02, 0.02]}>
         <group scale={buttonScale}>
           <mesh geometry={nodes.Cylinder_1.geometry} material={materials['Cosmopolitan 1']} />
           <mesh
