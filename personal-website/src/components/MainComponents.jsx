@@ -33,9 +33,9 @@ const MainComponents = (props) => {
             secondTweenStarted.current = false
 
             if (toggleSkills) {
-
-                const spaceBasePosition = new THREE.Vector3(-40, 7.5, 5);
-                const spaceBaseCameraPosition = new THREE.Vector3(-20, 9, 5)
+                firstTweenStarted.current = false
+                const spaceBasePosition = new THREE.Vector3(-40, 7.5, 3);
+                const spaceBaseCameraPosition = new THREE.Vector3(-20, 9, 3)
                 
                 new TWEEN.Tween(cameraPosition)
                 .to(spaceBaseCameraPosition, 1000)
@@ -51,7 +51,8 @@ const MainComponents = (props) => {
                     setCameraTarget(cameraTarget)
                 }).start()
 
-            } if (!firstTweenStarted.current) {
+            }
+            if (!firstTweenStarted.current) {
 
                 const astronautPosition = new THREE.Vector3(-1, 2.5, 25);
                 const astronautCameraPosition = new THREE.Vector3(8, 3.5, 25);
