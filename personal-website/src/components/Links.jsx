@@ -80,7 +80,7 @@ const Links = () => {
                 <RoundedBox args={[1, 2.5, 6]} radius={0.4} smoothness={9} position={[linksX, linksY, linksZ]}>
                     <meshPhysicalMaterial color={"#FFFFFF"} />
                 </RoundedBox>
-                <mesh position={[linksX + 1, linksY, linksZ + 0.5]} rotation={[0, Math.PI/2, 0]}>
+                <mesh position={[linksX+0.51, linksY, linksZ + 0.5]} rotation={[0, Math.PI/2, 0]}>
                 {/* <RoundedBox args={[2, 2, 8]} radius={0.4} smoothness={9} position={[-13, 0, -41]}>
                     <MeshReflectorMaterial color={"#ae4a4d"} />
                 </RoundedBox> */}
@@ -92,7 +92,7 @@ const Links = () => {
                 <RoundedBox rotation={[0, 0, 0]}args={[1, 2.5, 6]} radius={0.4} smoothness={2} position={[linksX, linksY - 3, linksZ]}>
                     <meshPhysicalMaterial color={"#FFFFFF"} />
                 </RoundedBox>
-                <mesh position={[linksX + 0.6, linksY - 3, linksZ]} rotation={[0, Math.PI/2, 0]}>
+                <mesh position={[linksX + 0.51, linksY - 3, linksZ]} rotation={[0, Math.PI/2, 0]}>
                 {/* <RoundedBox args={[2, 2, 8]} radius={0.4} smoothness={9} position={[-13, 0, -41]}>
                     <MeshReflectorMaterial color={"#ae4a4d"} />
                 </RoundedBox> */}
@@ -104,7 +104,7 @@ const Links = () => {
                 <RoundedBox rotation={[0, 0, 0]}args={[1, 2.5, 6]} radius={0.4} smoothness={2} position={[linksX, linksY - 6, linksZ]}>
                     <meshPhysicalMaterial color={"#FFFFFF"} />
                 </RoundedBox>
-                <mesh position={[linksX + 0.6, linksY - 5.9, linksZ + 1.6]} rotation={[0, Math.PI/2, 0]}>
+                <mesh position={[linksX + 0.51, linksY - 5.9, linksZ + 1.6]} rotation={[0, Math.PI/2, 0]}>
                     <planeGeometry  args={[1.5, 1.3 ]} />
                     <meshBasicMaterial transparent map={emailMap} />
                     <Text color={"#E15342"} fontSize = {0.7} font={emailFont} position = {[2, 0.1, 0.3]}> Email </Text>

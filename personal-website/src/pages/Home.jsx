@@ -16,6 +16,7 @@ import Button from '../../public/Button.jsx';
 import InstructionalText from '../components/InstructionalText.jsx';
 import Links from '../components/Links.jsx';
 import Screen from '../components/Screen.jsx';
+import SpaceBase from '../components/SpaceBase.jsx';
 
 
 
@@ -30,7 +31,7 @@ return (
                 <InstructionalText />
                 <Astronaut />
                 <AboutMeText/>
-                <Screen />
+                {/* <Screen /> */}
                 <Button />
                 <ProjectCube />
                 <Links />

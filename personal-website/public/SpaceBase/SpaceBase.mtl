@@ -1,0 +1,51 @@
+newmtl Metal
+Kd 0.904 0.904 0.904
+d 1.000
+newmtl Metal 1
+Kd 0.904 0.135 0.066
+d 1.000
+newmtl Metal 2
+Kd 0.904 0.904 0.904
+d 1.000
+newmtl Metal 3
+Kd 0.904 0.135 0.066
+d 1.000
+newmtl Metal 4
+Kd 0.904 0.135 0.066
+d 1.000
+newmtl Metal 5
+Kd 0.072 0.072 0.072
+d 1.000
+newmtl Metal 6
+Kd 0.904 0.135 0.066
+d 1.000
+newmtl Metal 7
+Kd 0.904 0.904 0.904
+d 1.000
+newmtl Metal 8
+Kd 0.904 0.904 0.904
+d 1.000
+newmtl Metal 9
+Kd 0.904 0.135 0.066
+d 1.000
+newmtl Metal 10
+Kd 0.904 0.904 0.904
+d 1.000
+newmtl Metal 11
+Kd 0.904 0.135 0.066
+d 1.000
+newmtl Metal 12
+Kd 0.904 0.904 0.904
+d 1.000
+newmtl Metal 13
+Kd 0.904 0.135 0.066
+d 1.000
+newmtl Metal 14
+Kd 0.904 0.135 0.066
+d 1.000
+newmtl Glass
+Kd 1.000 1.000 1.000
+d 1.000
+newmtl Rock
+Kd 0.904 0.725 0.431
+d 1.000
