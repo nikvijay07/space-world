@@ -39,6 +39,12 @@ const Rocket = forwardRef((props, ref) => {
       }
     };
 
+    const handleTouchStart = (event) => {
+      if (event.touches) {
+        isArrowUp = true
+      }
+    }
+
 
     const handleKeyUp = (event) => {
       if (event.key === 'ArrowUp') {
@@ -49,9 +55,15 @@ const Rocket = forwardRef((props, ref) => {
 
     };
 
+    const handleTouchEnd = (event) => {
+      isArrowUp = false;
+    }
+
     // Add event listeners on mount
     window.addEventListener('keydown', handleKeyDown);
     window.addEventListener('keyup', handleKeyUp);
+    window.addEventListener('touchstart', handleTouchStart);
+    window.addEventListener('touchend', handleTouchEnd)
 
     // Start animation loop on mount
     requestAnimationFrame(animate);
@@ -60,6 +72,9 @@ const Rocket = forwardRef((props, ref) => {
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
       window.removeEventListener('keyup', handleKeyUp);
+      window.removeEventListener('touchstart', handleTouchStart)
+      window.removeEventListener('touchend', handleTouchEnd)
+
       // Cancel any pending animation frames (optional)
       window.cancelAnimationFrame(animate);
     };
