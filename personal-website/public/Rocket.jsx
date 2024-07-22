@@ -14,7 +14,6 @@ const Rocket = forwardRef((props, ref) => {
   let stepSize = 0.08; // Adjust as needed
   let isArrowDown = false;
 
-
   const animate = () => {
     if (isArrowUp && ref.current.position.z > -60) {
       ref.current.position.z -= stepSize;
@@ -22,6 +21,8 @@ const Rocket = forwardRef((props, ref) => {
     if (isArrowDown && ref.current.position.z < 63) {
       ref.current.position.z += stepSize
     }
+
+    // console.log(ref.current)
 
 
     requestAnimationFrame(animate);
