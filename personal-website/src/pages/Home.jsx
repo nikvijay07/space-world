@@ -25,13 +25,12 @@ const Home = () => {
 return (
     <section className='start'>
         <Suspense fallback={null}>
-            <Canvas>
+            <Canvas style={{ width: '100%', height: '100vh' }}>
                 <MainComponents />
                 <Welcome />
                 <InstructionalText />
                 <Astronaut />
                 <AboutMeText/>
-                {/* <Screen /> */}
                 <Button />
                 <ProjectCube />
                 <Links />

@@ -32,9 +32,9 @@ const Rocket = forwardRef((props, ref) => {
     // console.log(rocketPosition)
 
     const handleKeyDown = (event) => {
-      if (event.key === 'ArrowUp') {
+      if (event.key === 'ArrowUp' || event.key == 'ArrowRight') {
         isArrowUp = true;
-      } else if (event.key === 'ArrowDown') {
+      } else if (event.key === 'ArrowDown' || event.key === 'ArrowLeft') {
         isArrowDown = true;
       }
     };
@@ -47,9 +47,9 @@ const Rocket = forwardRef((props, ref) => {
 
 
     const handleKeyUp = (event) => {
-      if (event.key === 'ArrowUp') {
+      if (event.key === 'ArrowUp' || event.key == 'ArrowRight') {
         isArrowUp = false;
-      } else if (event.key === 'ArrowDown') {
+      } else if (event.key === 'ArrowDown' || event.key === 'ArrowLeft') {
         isArrowDown = false;
       }
 

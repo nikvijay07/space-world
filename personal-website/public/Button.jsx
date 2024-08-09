@@ -55,7 +55,7 @@ export default function Button(props) {
 
   return (
     <group {...props} dispose={null} position={[-4.5, 3, resumePosition + 1.6]} rotation={[-Math.PI / 2, 0, -0.9]}>
-      <group onPointerEnter={onHover} onClick={onButtonClick} rotation={[Math.PI*6/11, -Math.PI, 0]} scale={[0.02, 0.02, 0.02]}>
+      <group onPointerEnter={onHover} onClick={onButtonClick} rotation={[Math.PI*6/11, -Math.PI, 0]} scale={[0.025, 0.025, 0.02]}>
         <group scale={buttonScale}>
           <mesh geometry={nodes.Cylinder_1.geometry} material={materials['Cosmopolitan 1']} />
           <mesh

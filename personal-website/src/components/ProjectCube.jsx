@@ -17,7 +17,7 @@ const ProjectCube = () => {
     const purpleCube = useGLTF("purpleCube.glb")
 
 
-    const cubePositionX = -13
+    const cubePositionX = -10
     const cubePositionY = 0
     const cubePositionZ = STARTING_Z - 57
 
@@ -47,21 +47,21 @@ const ProjectCube = () => {
                 FraudGenie
                 <meshStandardMaterial color={hovered ? "#232F4F" : "#FFFFFF" }  />
             </Text>
-            <Text position = {[cubePositionX + 2.68, cubePositionY + 2.95 , cubePositionZ + 0.18]} rotation = {[0, Math.PI/2, -0.01]} scale={[0.3, 0.3, 0.3]} maxWidth={16} lineHeight={1.3} font={bodyText} textAlign='center'> 
-                Real-time credit-card fraud detection dashboard for small businesses, enabling real-time data analytics and visualization, driving data-driven decision-making, and improving their control over financial security. Used Python, Flask, Jupyter Notebook, XGBoost, and Javascript.
+            <Text position = {[cubePositionX + 2.68, cubePositionY + 2.8 , cubePositionZ + 0.18]} rotation = {[0, Math.PI/2, -0.01]} scale={[0.3, 0.3, 0.3]} maxWidth={16} lineHeight={1.3} font={bodyText} textAlign='center'> 
+                Real-time credit-card fraud detection dashboard for small businesses, enabling real-time data analytics and visualization, driving data-driven decision-making, and improving their control over financial security. {"\n\n"} Used Python, Flask, Jupyter Notebook, XGBoost, and Javascript.
                 <meshStandardMaterial color={hovered ? "#232F4F" : "#FFFFFF" } />
             </Text>
             </mesh>
 
 
             <mesh onClick={(e) => {transport(e, "https://github.com/nikvijay07/space-world")}}  onPointerEnter={() => setHovered2(true)} onPointerLeave={() => setHovered2(false)} >
-            <primitive object={cube2.scene} rotation = {[0, Math.PI/2, 0]} position = {[cubePositionX, cubePositionY + 1 , cubePositionZ - 9.1]} scale = {[60, 58, 55]} />
-            <Text position = {[cubePositionX + 2.68, cubePositionY + 5.55 ,cubePositionZ - 8.9]}  rotation = {[0, Math.PI/2, -0.02]} scale={[0.6, 0.6, 0.6]} font={SpaceFont}> 
+            <primitive object={cube2.scene} rotation = {[0, Math.PI/2, 0]} position = {[cubePositionX, cubePositionY + 1 , cubePositionZ - 9.1]} scale = {[60, 63, 55]} />
+            <Text position = {[cubePositionX + 2.68, cubePositionY + 6 ,cubePositionZ - 8.9]}  rotation = {[0, Math.PI/2, -0.02]} scale={[0.6, 0.6, 0.6]} font={SpaceFont}> 
                 Personal Website
                 <meshStandardMaterial color={hovered2 ? "#232F4F" : "#FFFFFF" }  />
             </Text>
             <Text position = {[cubePositionX + 2.68, cubePositionY + 3.6 ,cubePositionZ - 8.9]} rotation = {[0, Math.PI/2, -0.01]} scale={[0.3, 0.3, 0.3]} maxWidth={15} textAlign='center' lineHeight={1.3} font={bodyText}> 
-                My 3D take on the classic personal website. I wanted to showcase creativity in my design and bring in some of my previous react experience to create something interactive. Built using React, Javascript, Three.JS, and Vectary.
+                My 3D take on the classic personal website. I wanted to showcase creativity in my design and bring in some of my previous react experience to create something interactive. {"\n\n"} Built using React, Javascript, Three.JS, and Vectary.
                 <meshStandardMaterial color={hovered2 ? "#232F4F" : "#FFFFFF" } />
             </Text>
             </mesh>
@@ -72,8 +72,8 @@ const ProjectCube = () => {
                 Dungeon Explorer
                 <meshStandardMaterial color={hovered3 ? "#232F4F" : "#FFFFFF" }  />
             </Text>
-            <Text position = {[cubePositionX + 2.68, cubePositionY + 2.6 ,cubePositionZ - 17.95]} rotation = {[0, Math.PI/2, -0.01]} scale={[0.3, 0.3, 0.3]} maxWidth={15} textAlign='center' lineHeight={1.3} font={bodyText}> 
-            Created a 2D game with enemies, leaderboard tracking, collision detection, and shooting animations in a team environment. Used Java, Kotlin, and Android Studio
+            <Text position = {[cubePositionX + 2.68, cubePositionY + 2.3 ,cubePositionZ - 17.95]} rotation = {[0, Math.PI/2, -0.01]} scale={[0.3, 0.3, 0.3]} maxWidth={15} textAlign='center' lineHeight={1.3} font={bodyText}> 
+            Created a 2D game with enemies, leaderboard tracking, collision detection, and shooting animations in a team environment.{"\n\n"} Used Java, Kotlin, and Android Studio
                 <meshStandardMaterial color={hovered3 ? "#232F4F" : "#FFFFFF" } />
             </Text>
             </mesh>
@@ -84,8 +84,8 @@ const ProjectCube = () => {
                 AirBnB Review Summarizer
                 <meshStandardMaterial color={hovered4 ? "#232F4F" : "#FFFFFF" }  />
             </Text>
-            <Text position = {[cubePositionX + 2.68, cubePositionY + 3.55 , cubePositionZ - 27.15]} rotation = {[0, Math.PI/2, -0.01]} scale={[0.3, 0.3, 0.3]} maxWidth={16} lineHeight={1.3} font={bodyText} textAlign='center'> 
-                Developed a chrome extension that scraped reviews from an AirBnB property and compiled a summary to showcase both positive and negative aspects in a concise blurb. Created with ...
+            <Text position = {[cubePositionX + 2.68, cubePositionY + 3.24 , cubePositionZ - 27.15]} rotation = {[0, Math.PI/2, -0.01]} scale={[0.3, 0.3, 0.3]} maxWidth={16} lineHeight={1.3} font={bodyText} textAlign='center'> 
+                Developed a chrome extension that scraped reviews from an AirBnB property and compiled a summary to showcase both positive and negative aspects in a concise blurb. {"\n\n"} Created with ...
                 <meshStandardMaterial color={hovered4 ? "#232F4F" : "#FFFFFF" } />
             </Text>
             </mesh>
