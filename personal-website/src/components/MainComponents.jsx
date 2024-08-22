@@ -67,8 +67,8 @@ const MainComponents = (props) => {
 
     }
     const lookAtExperience = () => {
-        const experiencePosition = new THREE.Vector3(25, 4, 40);
-        const experienceCameraPosition = new THREE.Vector3(18, 5, 34)
+        const experiencePosition = new THREE.Vector3(25, 5, 40);
+        const experienceCameraPosition = new THREE.Vector3(18, 10, 34)
 
         firstTweenStarted.current = false;
         new TWEEN.Tween(cameraPosition)
@@ -88,7 +88,7 @@ const MainComponents = (props) => {
     }
 
     const mainRocketView = (rocketPos) => {
-        const originalCameraPosition = new THREE.Vector3(rocketPos.x + 40, rocketPos.y + 20, rocketPos.z + 2) //10, 6, 23 |||| 0, 10, 0
+        const originalCameraPosition = new THREE.Vector3(rocketPos.x + 10, rocketPos.y + 6, rocketPos.z + 2) //10, 6, 23 |||| 0, 10, 0
         const originalCameraTarget = new THREE.Vector3(rocketPos.x - 5, rocketPos.y + 1, rocketPos.z - 5 ) //-5, 1, -5 |||| 0, 8, 0
 
         new TWEEN.Tween(cameraPosition)
