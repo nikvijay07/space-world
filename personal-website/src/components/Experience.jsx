@@ -20,11 +20,11 @@ const [learnMoreHover, setLearnMoreHover] = useState(false)
 
 const cfa_url = "/cfa.png"
 const cfa_map = useLoader(THREE.TextureLoader, cfa_url)
-
+// onClick={props.displaySpaceBase}
 
 return (
     <>
-    <RoundedBox onClick={props.displaySpaceBase} radius={0.2} args={[1, 2, 3]} position={[-5, 1.5, 19]} rotation={[0, -0.4, 0.1]} onPointerEnter={() => setLearnMoreHover(true)} onPointerLeave={() => setLearnMoreHover(false)}>
+    <RoundedBox radius={0.2} args={[1, 2, 3]} position={[-5, 1.5, 19]} rotation={[0, -0.4, 0.1]} onPointerEnter={() => setLearnMoreHover(true)} onPointerLeave={() => setLearnMoreHover(false)}> 
         <Text3D scale={[0.3, 0.3, 0.3]} position={[1,-0.1,1.1]} rotation={[0, Math.PI/2, 0]} font="./roboto_black.json" >
             Experience
             <meshToonMaterial color={learnMoreHover ? "#022e4e" : "#ffffff"} />
