@@ -11,7 +11,10 @@ const Experience = (props) => {
 
 const fbx = useLoader(FBXLoader, '/Notebook.fbx')
 
-const notebookPosition = [29, 3, 43]
+const notebookPositionX = 29
+const notebookPositionY = 3
+const notebookPositionZ = 60
+
 const [learnMoreHover, setLearnMoreHover] = useState(false)
 
 
@@ -28,15 +31,15 @@ return (
         </Text3D>
     <meshBasicMaterial color={"#636d89"}/>
     </RoundedBox>
-    <Cylinder position = {notebookPosition} rotation={[0, 0.9, 0]} scale={[7, 0.1, 0.1]} >
+    <Cylinder position = {[notebookPositionX, notebookPositionY, notebookPositionZ]} rotation={[0, 0.8, 0]} scale={[7, 0.1, 0.1]} >
         <RoundedBox  position = {[0.5, 26, 0]} radius={0.2} args={[0.5, 40, 3]} rotation={[0.2, 0, 0]}>
             <meshBasicMaterial color = {"#ad463e"}/>
         </RoundedBox>
     </Cylinder>
-    <Cylinder position = {[28, 4.7, 38.7]} rotation={[0, 0, 0.2]} scale={[0.1, 0.4, 0.1]} >
+    <Cylinder position = {[31.5, 3.1, 57]} rotation={[0, 0, 0]} scale={[0.1, 0.4, 0.1]} >
     </Cylinder>
-    <mesh position={[28, 7.6, 38.7]} rotation={[0,-2.2,0]}>
-        <planeGeometry args={[1.9, 1.6]} />
+    <mesh position={[31.2, 6.8, 57.2]} rotation={[0,-2.24,0]}>
+        <planeGeometry args={[2.375 ,2]} />
         <meshBasicMaterial transparent map={cfa_map} side={THREE.DoubleSide}  />
     </mesh>
 

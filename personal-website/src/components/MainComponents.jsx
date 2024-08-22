@@ -67,8 +67,8 @@ const MainComponents = (props) => {
 
     }
     const lookAtExperience = () => {
-        const experiencePosition = new THREE.Vector3(25, 5, 40);
-        const experienceCameraPosition = new THREE.Vector3(18, 10, 34)
+        const experiencePosition = new THREE.Vector3(25, 5, 59);
+        const experienceCameraPosition = new THREE.Vector3(17, 10, 51)
 
         firstTweenStarted.current = false;
         new TWEEN.Tween(cameraPosition)
