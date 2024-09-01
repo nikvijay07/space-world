@@ -23,14 +23,14 @@ const MainComponents = (props) => {
     const [cameraPosition, setCameraPosition] = useState(new THREE.Vector3(20, 8, -15))
     const [cameraTarget, setCameraTarget] = useState(new THREE.Vector3(0, -1, -20))
 
-    let firstTweenStarted = useRef(false);
-    let secondTweenStarted = useRef(false);
+    // let firstTweenStarted = useRef(false);
+    // let secondTweenStarted = useRef(false);
 
     const lookAtAboutMe = () => {
         const astronautPosition = new THREE.Vector3(-1, 2.5, 25);
                 const astronautCameraPosition = new THREE.Vector3(8, 3.5, 25);
 
-                firstTweenStarted.current = true;
+                // firstTweenStarted.current = true;
                 new TWEEN.Tween(cameraPosition)
                 .to(astronautCameraPosition, 1000)
                 .easing(TWEEN.Easing.Quadratic.Out)
@@ -50,7 +50,7 @@ const MainComponents = (props) => {
         const spaceBasePosition = new THREE.Vector3(12, 2, 25);
         const spaceBaseCameraPosition = new THREE.Vector3(8, 2.5, 25)
 
-        firstTweenStarted.current = false;
+        // firstTweenStarted.current = false;
         new TWEEN.Tween(cameraPosition)
         .to(spaceBaseCameraPosition, 2000)
         .easing(TWEEN.Easing.Linear.None)
@@ -68,9 +68,9 @@ const MainComponents = (props) => {
     }
     const lookAtExperience = () => {
         const experiencePosition = new THREE.Vector3(25, 5, 59);
-        const experienceCameraPosition = new THREE.Vector3(17, 10, 51)
+        const experienceCameraPosition = new THREE.Vector3(17, 7, 51)
 
-        firstTweenStarted.current = false;
+        // firstTweenStarted.current = false;
         new TWEEN.Tween(cameraPosition)
         .to(experienceCameraPosition, 1500)
         .easing(TWEEN.Easing.Linear.None)
@@ -133,32 +133,16 @@ const MainComponents = (props) => {
         const rocketPos = rocketRef.current.position;
         TWEEN.update()
 
-        if (rocketPos.z < 30.6 && rocketPos.z > 20.6 ) {   
-            secondTweenStarted.current = false
-
-            if (!firstTweenStarted.current && !toggleSkills) {
-                lookAtAboutMe();
-            }
-
-            if (toggleSkills && firstTweenStarted.current) {
-                lookAtSpaceBase();
-            }
-
-            if (toggleExperience && firstTweenStarted.current) {
-                lookAtExperience();
-            }
-
+        if (toggleSkills) {
+            lookAtSpaceBase()
+        } else if (toggleExperience) {
+            lookAtExperience()
+        } else if (rocketPos.z < 30.6 && rocketPos.z > 20.6 ) {   
+            lookAtAboutMe()
         } else if (rocketPos.z < 2 && rocketPos.z > -60 ) {   
-            secondTweenStarted.current = false
-            if (!firstTweenStarted.current) {
-                lookAtProjects(rocketPos);
-            }      
+            lookAtProjects(rocketPos);
         } else {
-            firstTweenStarted.current = false;
-            if (!secondTweenStarted.current) {
-                mainRocketView(rocketPos);
-            }
-
+            mainRocketView(rocketPos);
         }
         state.camera.lookAt(cameraTarget)
         state.camera.position.copy(cameraPosition)

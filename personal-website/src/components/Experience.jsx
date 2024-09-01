@@ -16,33 +16,42 @@ const notebookPositionY = 3
 const notebookPositionZ = 60
 
 const [learnMoreHover, setLearnMoreHover] = useState(false)
+const [returnHover, setReturnHover] = useState(false)
 
 
 const cfa_url = "/cfa.png"
 const cfa_map = useLoader(THREE.TextureLoader, cfa_url)
-// onClick={props.displaySpaceBase}
 
 return (
     <>
-    <RoundedBox radius={0.2} args={[1, 2, 3]} position={[-5, 1.5, 19]} rotation={[0, -0.4, 0.1]} onPointerEnter={() => setLearnMoreHover(true)} onPointerLeave={() => setLearnMoreHover(false)}> 
+    <RoundedBox onClick={props.displaySpaceBase} radius={0.2} args={[1, 2, 3]} position={[-5, 1.5, 19]} rotation={[0, -0.4, 0.1]} onPointerEnter={() => setLearnMoreHover(true)} onPointerLeave={() => setLearnMoreHover(false)}> 
         <Text3D scale={[0.3, 0.3, 0.3]} position={[1,-0.1,1.1]} rotation={[0, Math.PI/2, 0]} font="./roboto_black.json" >
             Experience
             <meshToonMaterial color={learnMoreHover ? "#022e4e" : "#ffffff"} />
         </Text3D>
     <meshBasicMaterial color={"#636d89"}/>
     </RoundedBox>
-    <Cylinder position = {[notebookPositionX, notebookPositionY, notebookPositionZ]} rotation={[0, 0.8, 0]} scale={[7, 0.1, 0.1]} >
+    <Cylinder position = {[notebookPositionX, notebookPositionY, notebookPositionZ]} rotation={[0, 0.85, 0]} scale={[7, 0.1, 0.1]} >
         <RoundedBox  position = {[0.5, 26, 0]} radius={0.2} args={[0.5, 40, 3]} rotation={[0.2, 0, 0]}>
             <meshBasicMaterial color = {"#ad463e"}/>
         </RoundedBox>
     </Cylinder>
-    <Cylinder position = {[31.5, 3.1, 57]} rotation={[0, 0, 0]} scale={[0.1, 0.4, 0.1]} >
+    <Cylinder position = {[31.5, 3.1, 57]} rotation={[0, 0, 1.8]} scale={[0.1, 0.1, 0.1]} >
     </Cylinder>
-    <mesh position={[31.2, 6.8, 57.2]} rotation={[0,-2.24,0]}>
-        <planeGeometry args={[2.375 ,2]} />
+    <mesh position={[31, 6.9, 57.3]} rotation={[0.02,-2.31,0]}>
+        <planeGeometry args={[2.6 ,2]} />
         <meshBasicMaterial transparent map={cfa_map} side={THREE.DoubleSide}  />
+        <Text3D scale={[0.17, 0.17, 0.17]} position={[-1.5,-1.1,0.1]} rotation={[-0.3, 0, 0.01]} font="./roboto_black.json" >
+            Software Engineering Co-op {"\n\n"} • Web Dev {"\n"} • AWS Invoice System
+            <meshToonMaterial color={learnMoreHover ? "#022e4e" : "#ffffff"} />
+        </Text3D>
     </mesh>
-
+    <mesh rotation={[0, 0, 0]}> 
+        <Text3D onPointerEnter={() => setReturnHover(true)} onPointerLeave={() => setReturnHover(false)} onClick={props.displaySpaceBase} scale={[0.6, 0.6, 0.6]} position={[31.5, 0, 58]} rotation={[0, -Math.PI/1.35, 0]} font="./roboto_black.json">
+            return to ship
+            <meshPhysicalMaterial color={returnHover ? "#636d89" : "#FFFFFF"}/>
+    </Text3D>
+    </mesh>
     </>
   );
 };
