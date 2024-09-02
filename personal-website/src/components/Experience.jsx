@@ -9,7 +9,7 @@ import * as THREE from 'three';
 
 const Experience = (props) => {
 
-const fbx = useLoader(FBXLoader, '/Notebook.fbx')
+const meteor = useLoader(FBXLoader, '/meteor3.fbx')
 
 const notebookPositionX = 29
 const notebookPositionY = 3
@@ -22,15 +22,17 @@ const [returnHover, setReturnHover] = useState(false)
 const cfa_url = "/cfa.png"
 const cfa_map = useLoader(THREE.TextureLoader, cfa_url)
 
+
+
 return (
     <>
-    <RoundedBox onClick={props.displaySpaceBase} radius={0.2} args={[1, 2, 3]} position={[-5, 1.5, 19]} rotation={[0, -0.4, 0.1]} onPointerEnter={() => setLearnMoreHover(true)} onPointerLeave={() => setLearnMoreHover(false)}> 
-        <Text3D scale={[0.3, 0.3, 0.3]} position={[1,-0.1,1.1]} rotation={[0, Math.PI/2, 0]} font="./roboto_black.json" >
-            Experience
-            <meshToonMaterial color={learnMoreHover ? "#022e4e" : "#ffffff"} />
-        </Text3D>
-    <meshBasicMaterial color={"#636d89"}/>
-    </RoundedBox>
+    <mesh onClick={props.displaySpaceBase} onPointerEnter={() => setLearnMoreHover(true)} onPointerLeave={() => setLearnMoreHover(false)} scale={[0.05, 0.04, 0.04]} position={[-5, -1.5, 18]} rotation={[0, 0, 0]} >
+        <primitive object={meteor}/>
+    </mesh>
+    <Text3D scale={[0.25, 0.25, 0.25]} position={[-4.6, 1.5, 20.1]} rotation={[0, 1, 0]} font="./roboto_black.json" >
+        Experience
+        <meshToonMaterial color={learnMoreHover ? "#022e4e" : "#ffffff"} />
+    </Text3D>
     <Cylinder position = {[notebookPositionX, notebookPositionY, notebookPositionZ]} rotation={[0, 0.85, 0]} scale={[7, 0.1, 0.1]} >
         <RoundedBox  position = {[0.5, 26, 0]} radius={0.2} args={[0.5, 40, 3]} rotation={[0.2, 0, 0]}>
             <meshBasicMaterial color = {"#ad463e"}/>
