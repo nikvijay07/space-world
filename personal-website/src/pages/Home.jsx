@@ -1,22 +1,14 @@
-import { useEffect, useRef, Suspense } from 'react'
+import { Suspense } from 'react'
 import './Home.css'
-import { Canvas, render, useFrame } from '@react-three/fiber';
-import Background from '../components/Background.jsx';
-import { Html, OrbitControls, PerspectiveCamera, PresentationControls } from '@react-three/drei';
-import Rocket from '../../public/Rocket.jsx'
+import { Canvas } from '@react-three/fiber';
 import Welcome from '../../public/Welcome.jsx';
-import * as THREE from 'three';
 import MainComponents from '../components/MainComponents.jsx';
-import { RocketProvider } from '../hooks/useRocket.jsx';
-import InstructionText from '../../public/InstructionText.jsx';
 import Astronaut from '../../public/Astronaut.jsx';
-import AboutMeText from '../../public/AboutMeText.jsx';
 import ProjectCube from '../components/ProjectCube.jsx';
 import Button from '../../public/Button.jsx';
 import InstructionalText from '../components/InstructionalText.jsx';
 import Links from '../components/Links.jsx';
-import Screen from '../components/Screen.jsx';
-import SpaceBase from '../components/SpaceBase.jsx';
+import { TextBox } from '../../public/TextBox.jsx';
 
 
 
@@ -30,7 +22,7 @@ return (
                 <Welcome />
                 <InstructionalText />
                 <Astronaut />
-                <AboutMeText/>
+                <TextBox/>
                 <Button />
                 <ProjectCube />
                 <Links />

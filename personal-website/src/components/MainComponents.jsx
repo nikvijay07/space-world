@@ -19,8 +19,9 @@ const MainComponents = (props) => {
     const [toggleSkills, setToggleSkils] = useState(false);
     const [toggleExperience, setToggleExperience] = useState(false);
 
-
+    // Use for
     const [cameraPosition, setCameraPosition] = useState(new THREE.Vector3(20, 8, -15))
+    // const [cameraPosition, setCameraPosition] = useState(new THREE.Vector3(20, 8, -15))
     const [cameraTarget, setCameraTarget] = useState(new THREE.Vector3(0, -1, -20))
 
     // let firstTweenStarted = useRef(false);
@@ -89,6 +90,7 @@ const MainComponents = (props) => {
 
     const mainRocketView = (rocketPos) => {
         const originalCameraPosition = new THREE.Vector3(rocketPos.x + 10, rocketPos.y + 6, rocketPos.z + 2) //10, 6, 23 |||| 0, 10, 0
+        // const originalCameraPosition = new THREE.Vector3(rocketPos.x + 40, rocketPos.y + 6, rocketPos.z + 2) //10, 6, 23 |||| 0, 10, 0
         const originalCameraTarget = new THREE.Vector3(rocketPos.x - 5, rocketPos.y + 1, rocketPos.z - 5 ) //-5, 1, -5 |||| 0, 8, 0
 
         new TWEEN.Tween(cameraPosition)
@@ -168,7 +170,7 @@ return (
         <Rocket ref={rocketRef}/>
         <Button />
         <SpaceBase displaySpaceBase={displaySpaceBase}/>
-        <Experience displaySpaceBase={displayExperience}/>
+        {/* <Experience displaySpaceBase={displayExperience}/> */}
     </>
     )
 

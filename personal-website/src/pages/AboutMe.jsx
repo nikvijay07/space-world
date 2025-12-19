@@ -1,14 +1,15 @@
 import { Suspense } from 'react'
-import { Canvas, render, useFrame } from '@react-three/fiber';
+import { Canvas } from '@react-three/fiber';
 import Welcome from '../../public/Welcome.jsx';
 import MainComponents from '../components/MainComponents.jsx';
 import Astronaut from '../../public/Astronaut.jsx';
-import AboutMeText from '../../public/AboutMeText.jsx';
 import ProjectCube from '../components/ProjectCube.jsx';
 import './Home.css'
 import Button from '../../public/Button.jsx';
 import InstructionalText from '../components/InstructionalText.jsx';
 import Links from '../components/Links.jsx';
+import { TextBox } from '../../public/TextBox.jsx';
+
 
 
 
@@ -17,12 +18,12 @@ const AboutMe = () => {
 return (
     <section className='start'>
         <Suspense fallback={null}>
-            <Canvas>
+            <Canvas style={{ width: '100%', height: '100vh' }}>
                 <MainComponents />
                 <Welcome />
                 <InstructionalText />
                 <Astronaut />
-                <AboutMeText />
+                <TextBox/>
                 <Button />
                 <ProjectCube />
                 <Links />
