@@ -39,7 +39,7 @@ export default function Button(props) {
 
   const downloadResume = () => {
     console.log("Downloading resume...")
-    window.open("https://nik-vijay-resume-bucket.s3.us-east-2.amazonaws.com/NikVijayResumeFinal+(1).pdf")
+    window.open("https://nik-vijay-resume-bucket.s3.us-east-2.amazonaws.com/NikVijayResumeFinal.pdf")
   }
 
   const onHover = () => {
