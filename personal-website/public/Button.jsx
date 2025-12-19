@@ -3,6 +3,7 @@ import { useGLTF } from '@react-three/drei'
 import TWEEN from '@tweenjs/tween.js'
 import { useFrame } from '@react-three/fiber'
 import STARTING_Z from './constants'
+import { Text3D } from '@react-three/drei'
 
 export default function Button(props) {
   const { nodes, materials } = useGLTF('/Button.gltf')
@@ -38,8 +39,7 @@ export default function Button(props) {
 
   const downloadResume = () => {
     console.log("Downloading resume...")
-
-    window.open("https://nikhil-vijayvergiya-resume-2024.s3.us-east-2.amazonaws.com/Nikhil+Resume.pdf")
+    window.open("https://nik-vijay-resume-bucket.s3.us-east-2.amazonaws.com/NikVijayResumeFinal+(1).pdf")
   }
 
   const onHover = () => {
@@ -58,48 +58,24 @@ export default function Button(props) {
       <group onPointerEnter={onHover} onClick={onButtonClick} rotation={[Math.PI*6/11, -Math.PI, 0]} scale={[0.025, 0.025, 0.02]}>
         <group scale={buttonScale}>
           <mesh geometry={nodes.Cylinder_1.geometry} material={materials['Cosmopolitan 1']} />
-          <mesh
-            geometry={nodes['3D_Text_-_R'].geometry}
-            material={materials['Garden Glory']}
-            position={[-20.914, -3.1, 23.781]}
-            rotation={[-1.595, 0, 0]}
-            scale={0.24}
-          />
-          <mesh
-            geometry={nodes['3D_Text_-_e'].geometry}
-            material={materials['Garden Glory']}
-            position={[-14.241, -3.1, 23.781]}
-            rotation={[-1.595, 0, 0]}
-            scale={0.24}
-          />
-          <mesh
-            geometry={nodes['3D_Text_-_e_1'].geometry}
-            material={materials['Garden Glory']}
-            position={[13.634, -3.1, 23.781]}
-            rotation={[-1.595, 0, 0]}
-            scale={0.24}
-          />
-          <mesh
-            geometry={nodes['3D_Text_-_s'].geometry}
-            material={materials['Garden Glory']}
-            position={[-8.184, -3.1, 23.781]}
-            rotation={[-1.595, 0, 0]}
-            scale={0.24}
-          />
-          <mesh
-            geometry={nodes['3D_Text_-_u'].geometry}
-            material={materials['Garden Glory']}
-            position={[-3.034, -3.1, 23.781]}
-            rotation={[-1.595, 0, 0]}
-            scale={0.24}
-          />
-          <mesh
-            geometry={nodes['3D_Text_-_m'].geometry}
-            material={materials['Garden Glory']}
-            position={[3.592, -3.1, 23.781]}
-            rotation={[-1.595, 0, 0]}
-            scale={0.24}
-          />
+          <Text3D
+              scale={[7,7,7]}
+              position={[-20, 3, resumePosition - 3]}
+              rotation={[0, 0, 0]}
+              font="./roboto_black.json"
+          >
+              Download
+              <meshToonMaterial color={"#d0d0d0"} />
+          </Text3D>
+          <Text3D
+              scale={[7,7,7]}
+              position={[-16, -7, resumePosition - 3]}
+              rotation={[0, 0, 0]}
+              font="./roboto_black.json"
+          >
+              Resume
+              <meshToonMaterial color={"#d0d0d0"} />
+          </Text3D>
         </group>
         <mesh geometry={nodes.Cylinder.geometry} material={materials.Cosmopolitan} />
       </group>
